@@ -4,16 +4,16 @@ using Application.UseCases.Message.Responses;
 using MediatR;
 
 namespace Application.UseCases.Message.Handlers;
-public class GetAllMessagesHandler : IRequestHandler<GetAllMessagesQuery, Domain.Entities.Message>
+public class GetAllMessagesHandler : IRequestHandler<GetAllMessagesQuery, GetAllMessagesResponse>
 {
-    private readonly IMessageRepository _mensagemRepository;
+    private readonly IMessageRepository _messageRepository;
 
-    public GetAllMessagesHandler(IMessageRepository mensagemRepository)
+    public GetAllMessagesHandler(IMessageRepository messageRepository)
     {
-        _mensagemRepository = mensagemRepository;
+        _messageRepository = messageRepository;
     }
 
-    public async Task<Domain.Entities.Message> Handle(GetAllMessagesQuery request, CancellationToken cancellationToken)
+    public async Task<GetAllMessagesResponse> Handle(GetAllMessagesQuery request, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }
